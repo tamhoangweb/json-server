@@ -1,13 +1,13 @@
-const faker = require("faker");
-const fs = require("fs");
+const faker = require('faker')
+const fs = require('fs')
 
-faker.locale = "vi";
+faker.locale = 'vi'
 
-console.log(faker.name.findName());
+console.log(faker.name.findName())
 
 const createCategories = (n) => {
-  if (n <= 0) return [];
-  const categories = [];
+  if (n <= 0) return []
+  const categories = []
   // Array.from(
   //   new Array(n).forEach(() => {
   //     const category = {
@@ -25,16 +25,16 @@ const createCategories = (n) => {
       name: faker.commerce.department(),
       createdAt: Date.now(),
       updatedAt: Date.now(),
-    };
+    }
 
-    categories.push(category);
-  });
-  return categories;
-};
+    categories.push(category)
+  })
+  return categories
+}
 
 const createProducts = (categories, n) => {
-  let products = [];
-  if (n <= 0) return [];
+  let products = []
+  if (n <= 0) return []
   for (const category of categories) {
     Array.from(new Array(n)).forEach(() => {
       const product = {
@@ -47,29 +47,29 @@ const createProducts = (categories, n) => {
         thumbnail: faker.image.imageUrl(400, 400),
         createdAt: Date.now(),
         updatedAt: Date.now(),
-      };
-      products.push(product);
-    });
+      }
+      products.push(product)
+    })
   }
-  return products;
-};
+  return products
+}
 
-(() => {
+;(() => {
   //fake data here
-  const categories = createCategories(4);
-  const products = createProducts(categories, 20);
+  const categories = createCategories(4)
+  const products = createProducts(categories, 20)
 
   //init database
   const db = {
     categories,
     products,
     profile: {
-      name: "tam",
+      name: 'tam',
     },
-  };
+  }
 
   //write data to db.json
-  fs.writeFileSync("db.json", JSON.stringify(db), () => {
-    console.log("Generate data successfully!");
-  });
-})();
+  fs.writeFileSync('db.json', JSON.stringify(db), () => {
+    console.log('Generate data successfully!')
+  })
+})()

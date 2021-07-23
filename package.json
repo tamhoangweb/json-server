@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "query-string": "^7.0.1"
   },
   "name": "json-server",
   "version": "1.0.0",

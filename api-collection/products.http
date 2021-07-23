@@ -23,8 +23,16 @@ GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
 GET {{baseUrl}}/{{resourceName}}?q=Carbonite
 
 ###
-# @name fulltextSearchName
+# @name searchName
 GET {{baseUrl}}/{{resourceName}}?name_like=Tasty
+
+###
+# @name fsearchPrice
+GET {{baseUrl}}/{{resourceName}}?price=778
+
+###
+# @name relationship
+GET {{baseUrl}}/categories/8532f18a-401e-4131-900b-768548ffbc1f/products
 
 ###
 # @name addNew
@@ -32,16 +40,22 @@ POST {{baseUrl}}/{{resourceName}}
 content-type: application/json
 
 {
-  "name": "Iphone New"
+  "categoryId": "683aca8a-bb4f-41c1-adef-1ecae7eb5793",
+  "name": "Laptop",
+  "color": "white",
+  "price": 778,
+  "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+  "thumbnail": "http://placeimg.com/400/400"
 }
 
 ###
 # @name update
-PATCH {{baseUrl}}/{{resourceName}}/2
+PATCH {{baseUrl}}/{{resourceName}}/2RoOTSe
 content-type: application/json
 
 {
-  "name": "Laptop New"
+  "name": "Laptop New patch",
+  "price": 788
 }
 
 ###

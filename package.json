@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "name": "json-server",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+    "start": "node main.js",
+    "fake-data": "node generate-data.js"
+  },
+  "author": "tamhoangweb",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.12"
+  }
+}

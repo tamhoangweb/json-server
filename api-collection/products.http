@@ -1,0 +1,50 @@
+@baseUrl=http://localhost:4000/api
+@resourceName=products
+
+# Products
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name params
+GET {{baseUrl}}/{{resourceName}}?color=white&price_gte=500
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=2&_limit=3
+
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+
+###
+# @name fulltextSearch
+GET {{baseUrl}}/{{resourceName}}?q=Carbonite
+
+###
+# @name fulltextSearchName
+GET {{baseUrl}}/{{resourceName}}?name_like=Tasty
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+content-type: application/json
+
+{
+  "name": "Iphone New"
+}
+
+###
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/2
+content-type: application/json
+
+{
+  "name": "Laptop New"
+}
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
+content-type: application/json
